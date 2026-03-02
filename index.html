@@ -1025,7 +1025,7 @@
     <script>
         // === CONFIG ===
         // Auto-detect repo from GitHub Pages URL (works for any fork)
-        const getRepoFromURL = () => {
+        const getRepoFromURL = () => ({ owner: 'ai-Alchemy-ux', repo: 'openclaw-mission-control' }); = () => {
             const hostname = window.location.hostname;
             const pathname = window.location.pathname;
             // GitHub Pages format: {owner}.github.io/{repo}/
@@ -1035,9 +1035,10 @@
                 return { owner, repo };
             }
             // Fallback for local development
-            return { owner: 'rdsthomas', repo: 'mission-control' };
+            return { owner: 'ai-Alchemy-ux', repo: 'openclaw-mission-control' };
         };
-        const { owner: detectedOwner, repo: detectedRepo } = getRepoFromURL();
+        const detectedOwner = 'ai-Alchemy-ux';
+const detectedRepo = 'openclaw-mission-control';
         
         const CONFIG = {
             owner: detectedOwner,
@@ -1124,6 +1125,8 @@
          * @throws on network/HTTP/invoke errors
          */
         async function gatewayInvoke(tool, args, opts = {}) {
+  console.log('Gateway call skipped for local (OpenClaw compatibility)');
+  return { jobs: [], skills: [] }; // Mock response
             const url = opts.gatewayUrl || getGatewayUrl();
             if (!url) throw new Error('No gateway URL configured');
             
