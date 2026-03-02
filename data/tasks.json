@@ -1,0 +1,15 @@
+[
+  {
+    "id": "task_001",
+    "title": "Setup Mission Control Test",
+    "description": "Verify integration with ClawSuite—agent should process this.",
+    "status": "backlog",
+    "subtasks": [
+      { "id": "sub_001", "title": "Confirm dashboard", "done": false },
+      { "id": "sub_002", "title": "Test webhook", "done": false }
+    ],
+    "priority": "high",
+    "dod": "Dashboard loads, task moves to in_progress, agent responds in ClawSuite.",
+    "comments": ["Setup complete—move to in_progress to test."]
+  }
+]
