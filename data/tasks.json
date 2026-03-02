@@ -3,7 +3,7 @@
     "id": "task_001",
     "title": "Setup Mission Control Test",
     "description": "Verify integration with ClawSuite—agent should process this.",
-    "status": "backlog",
+    "status": "in_progress",
     "subtasks": [
       { "id": "sub_001", "title": "Confirm dashboard", "done": false },
       { "id": "sub_002", "title": "Test webhook", "done": false }
